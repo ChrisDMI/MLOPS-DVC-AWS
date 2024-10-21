@@ -1,0 +1,52 @@
+Setup called. Train data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 500
+}), Validation data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 100
+})
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████| 500/500 [00:00<00:00, 6658.17 examples/s]
+Map: 100%|████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 5374.63 examples/s]
+
+  | Name                   | Type                          | Params | Mode
+---------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval
+1 | train_accuracy_metric  | BinaryAccuracy                | 0      | train
+2 | val_accuracy_metric    | BinaryAccuracy                | 0      | train
+3 | f1_metric              | BinaryF1Score                 | 0      | train
+4 | precision_macro_metric | BinaryPrecision               | 0      | train
+5 | recall_macro_metric    | BinaryRecall                  | 0      | train
+6 | precision_micro_metric | BinaryPrecision               | 0      | train
+7 | recall_micro_metric    | BinaryRecall                  | 0      | train
+---------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+7         Modules in train mode
+51        Modules in eval mode
+Epoch 19: 100%|█| 4/4 [00:01<00:00,  2.08it/s, v_num=71le, train/loss_step=0.592, train/acc_step=0.594, valid/loss_step=0.626, valid/loss_epo
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/torch/amp/autocast_mode.py:265: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py:298: The number of training batches (4) is smaller than the logging interval Trainer(log_every_n_steps=10). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+                                                                                                                                             
+Metric valid/loss_epoch improved. New best score: 0.668
+Metric valid/loss_epoch improved by 0.015 >= min_delta = 0.0. New best score: 0.653
+Metric valid/loss_epoch improved by 0.011 >= min_delta = 0.0. New best score: 0.642
+Metric valid/loss_epoch improved by 0.006 >= min_delta = 0.0. New best score: 0.636
+Metric valid/loss_epoch improved by 0.003 >= min_delta = 0.0. New best score: 0.633
+Metric valid/loss_epoch improved by 0.002 >= min_delta = 0.0. New best score: 0.631
+Metric valid/loss_epoch improved by 0.001 >= min_delta = 0.0. New best score: 0.629
+Metric valid/loss_epoch improved by 0.001 >= min_delta = 0.0. New best score: 0.629
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.628
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.628
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.628
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.628
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.627
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.627
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.627
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.626
+Metric valid/loss_epoch improved by 0.000 >= min_delta = 0.0. New best score: 0.626
+`Trainer.fit` stopped: `max_epochs=20` reached.

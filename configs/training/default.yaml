@@ -1,0 +1,6 @@
+# configs/training/default.yaml
+max_epochs: 1                   # Number of training epochs
+log_every_n_steps: 10            # Log every n steps
+deterministic: true              # Ensure deterministic behavior
+limit_train_batches: 0.5        # Use only 5% of the training data
+limit_val_batches: ${training.limit_train_batches}          # Use the limit impose in train batches on validation data

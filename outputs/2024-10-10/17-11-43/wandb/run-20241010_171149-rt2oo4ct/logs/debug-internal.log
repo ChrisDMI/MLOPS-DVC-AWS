@@ -1,0 +1,21 @@
+{"time":"2024-10-10T17:11:49.423189+02:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-10T17:11:49.423254+02:00","level":"INFO","msg":"created symlink","path":"wandb/run-20241010_171149-rt2oo4ct/logs/debug-core.log"}
+{"time":"2024-10-10T17:11:49.425038+02:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-10T17:11:49.437386+02:00","level":"INFO","msg":"created new stream","id":"rt2oo4ct"}
+{"time":"2024-10-10T17:11:49.43745+02:00","level":"INFO","msg":"stream: started","id":"rt2oo4ct"}
+{"time":"2024-10-10T17:11:49.437474+02:00","level":"INFO","msg":"sender: started","stream_id":{"value":"rt2oo4ct"}}
+{"time":"2024-10-10T17:11:49.437458+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rt2oo4ct"}}
+{"time":"2024-10-10T17:11:49.437465+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"rt2oo4ct"}}
+{"time":"2024-10-10T17:11:49.914219+02:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-10T17:11:49.916495+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-10T17:11:54.145683+02:00","level":"INFO","msg":"stream: closing","id":"rt2oo4ct"}
+{"time":"2024-10-10T17:11:54.146382+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-10T17:11:54.146588+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-10T17:11:54.309341+02:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2024-10-10T17:11:54.309354+02:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2024-10-10T17:11:54.309359+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2024-10-10T17:11:54.728671+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-10T17:11:54.957948+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"rt2oo4ct"}}
+{"time":"2024-10-10T17:11:54.957967+02:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"rt2oo4ct"}}
+{"time":"2024-10-10T17:11:54.957961+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rt2oo4ct"}}
+{"time":"2024-10-10T17:11:54.958191+02:00","level":"INFO","msg":"stream: closed","id":"rt2oo4ct"}

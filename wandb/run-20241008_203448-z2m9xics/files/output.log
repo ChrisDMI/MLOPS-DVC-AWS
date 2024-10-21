@@ -1,0 +1,90 @@
+Setup called. Train data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 500
+}), Validation data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 100
+})
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [00:00<00:00, 5933.29 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 5611.33 examples/s]
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:654: Checkpoint directory /Users/christiansegnou/Documents/My_Lectures/MLOPS/MLOPS-BASICS/w_and_b_logging/models exists and is not empty.
+
+  | Name                   | Type                          | Params | Mode
+---------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval
+1 | train_accuracy_metric  | BinaryAccuracy                | 0      | train
+2 | val_accuracy_metric    | BinaryAccuracy                | 0      | train
+3 | f1_metric              | BinaryF1Score                 | 0      | train
+4 | precision_macro_metric | BinaryPrecision               | 0      | train
+5 | recall_macro_metric    | BinaryRecall                  | 0      | train
+6 | precision_micro_metric | BinaryPrecision               | 0      | train
+7 | recall_micro_metric    | BinaryRecall                  | 0      | train
+---------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+7         Modules in train mode
+51        Modules in eval mode
+Epoch 0: 100%|█| 16/16 [00:03<00:00,  4.33it/s, v_num=xics, train/loss_step=0.698, train/acc_step=0.550, valid/loss_step=0.677, valid/loss_epoch=0.693, valid/acc=0.530, valid/precision_macro=0.661, valid/reca
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/torch/amp/autocast_mode.py:265: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+                                                                                                                                                                                                                
+Traceback (most recent call last):
+  File "train.py", line 78, in <module>
+    main()
+  File "train.py", line 75, in main
+    trainer.fit(model, data_module)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+    call._call_and_handle_interrupt(
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 981, in _run
+    results = self._run_stage()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1025, in _run_stage
+    self.fit_loop.run()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 206, in run
+    self.on_advance_end()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 378, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/call.py", line 218, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/early_stopping.py", line 190, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/early_stopping.py", line 202, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/early_stopping.py", line 153, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val_loss` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train/loss`, `train/loss_step`, `train/acc`, `train/acc_step`, `valid/loss`, `valid/loss_epoch`, `valid/acc`, `valid/precision_macro`, `valid/recall_macro`, `valid/precision_micro`, `valid/recall_micro`, `valid/f1`, `train/loss_epoch`, `train/acc_epoch`
+Traceback (most recent call last):
+  File "train.py", line 78, in <module>
+    main()
+  File "train.py", line 75, in main
+    trainer.fit(model, data_module)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+    call._call_and_handle_interrupt(
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 981, in _run
+    results = self._run_stage()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1025, in _run_stage
+    self.fit_loop.run()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 206, in run
+    self.on_advance_end()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/fit_loop.py", line 378, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/call.py", line 218, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/early_stopping.py", line 190, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/early_stopping.py", line 202, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/early_stopping.py", line 153, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val_loss` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `train/loss`, `train/loss_step`, `train/acc`, `train/acc_step`, `valid/loss`, `valid/loss_epoch`, `valid/acc`, `valid/precision_macro`, `valid/recall_macro`, `valid/precision_micro`, `valid/recall_micro`, `valid/f1`, `train/loss_epoch`, `train/acc_epoch`

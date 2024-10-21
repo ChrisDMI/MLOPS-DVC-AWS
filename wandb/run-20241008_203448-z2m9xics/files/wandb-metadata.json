@@ -1,0 +1,32 @@
+{
+  "os":  "macOS-14.5-arm64-arm-64bit",
+  "python":  "3.8.19",
+  "startedAt":  "2024-10-08T18:34:48.943487Z",
+  "program":  "train.py",
+  "codePath":  "MLOPS/MLOPS-BASICS/w_and_b_logging/train.py",
+  "git":  {
+    "remote":  "https://github.com/ChrisDMI/My-Lectures-on-AI-Data.git",
+    "commit":  "88cbf9a5e8d899c68a8c41ebfcf6d8a9183b37cf"
+  },
+  "email":  "nguiepemarius@gmail.com",
+  "root":  ".",
+  "host":  "Christians-MBP",
+  "username":  "christiansegnou",
+  "executable":  "/Users/christiansegnou/miniconda3/envs/torch-mps/bin/python",
+  "codePathLocal":  "train.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "245107195904",
+      "used":  "225264050176"
+    }
+  },
+  "memory":  {
+    "total":  "8589934592"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  8
+  }
+}

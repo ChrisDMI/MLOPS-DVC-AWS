@@ -1,0 +1,40 @@
+Setup called. Train data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 500
+}), Validation data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 100
+})
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 500/500 [00:00<00:00, 6202.79 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 5544.43 examples/s]
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/callbacks/model_checkpoint.py:654: Checkpoint directory /Users/christiansegnou/Documents/My_Lectures/MLOPS/MLOPS-BASICS/w_and_b_logging/models exists and is not empty.
+
+  | Name                   | Type                          | Params | Mode
+---------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval
+1 | train_accuracy_metric  | BinaryAccuracy                | 0      | train
+2 | val_accuracy_metric    | BinaryAccuracy                | 0      | train
+3 | f1_metric              | BinaryF1Score                 | 0      | train
+4 | precision_macro_metric | BinaryPrecision               | 0      | train
+5 | recall_macro_metric    | BinaryRecall                  | 0      | train
+6 | precision_micro_metric | BinaryPrecision               | 0      | train
+7 | recall_micro_metric    | BinaryRecall                  | 0      | train
+---------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+7         Modules in train mode
+51        Modules in eval mode
+Epoch 6: 100%|█| 16/16 [00:03<00:00,  4.49it/s, v_num=7tp6, train/loss_step=0.566, train/acc_step=0.750, valid/loss_step=0.621, valid/loss_epoch=0.649, valid/acc=0.640, valid/precision_macro=0.640, valid/reca
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/torch/amp/autocast_mode.py:265: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+                                                                                                                                                                                                                
+Metric valid/loss_epoch improved. New best score: 0.660
+Metric valid/loss_epoch improved by 0.007 >= min_delta = 0.0. New best score: 0.653
+Metric valid/loss_epoch improved by 0.002 >= min_delta = 0.0. New best score: 0.651
+Metric valid/loss_epoch improved by 0.001 >= min_delta = 0.0. New best score: 0.650
+Metric valid/loss_epoch improved by 0.001 >= min_delta = 0.0. New best score: 0.649
+Monitored metric valid/loss_epoch did not improve in the last 2 records. Best score: 0.649. Signaling Trainer to stop.

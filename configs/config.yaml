@@ -1,0 +1,8 @@
+# configs/config.yaml
+defaults:
+  - model: default  # Loads model configuration from model/default.yaml
+  - processing: default # Load processing/default.yaml
+  - training: default   # Load training/default.yaml
+  - override hydra/job_logging: colorlog  # Enable color logging for job logs
+  - override hydra/hydra_logging: colorlog  # Enable color logging for Hydra logs
+

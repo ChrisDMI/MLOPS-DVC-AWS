@@ -1,0 +1,30 @@
+{
+  "os":  "macOS-14.5-arm64-arm-64bit",
+  "python":  "3.8.19",
+  "startedAt":  "2024-10-21T22:21:29.565887Z",
+  "program":  "train.py",
+  "git":  {
+    "remote":  "https://github.com/ChrisDMI/MLOPS-DVC-AWS.git",
+    "commit":  "451aa3ea2eb5c090b22aba8fc7efa534ab50ad8b"
+  },
+  "email":  "nguiepemarius@gmail.com",
+  "root":  ".",
+  "host":  "Christians-MBP",
+  "username":  "christiansegnou",
+  "executable":  "/Users/christiansegnou/miniconda3/envs/torch-mps/bin/python",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "245107195904",
+      "used":  "228597051392"
+    }
+  },
+  "memory":  {
+    "total":  "8589934592"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  8
+  }
+}

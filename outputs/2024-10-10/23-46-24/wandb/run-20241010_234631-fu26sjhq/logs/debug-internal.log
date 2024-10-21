@@ -1,0 +1,24 @@
+{"time":"2024-10-10T23:46:31.639951+02:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-10T23:46:31.64003+02:00","level":"INFO","msg":"created symlink","path":"wandb/run-20241010_234631-fu26sjhq/logs/debug-core.log"}
+{"time":"2024-10-10T23:46:31.646286+02:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-10T23:46:31.659529+02:00","level":"INFO","msg":"created new stream","id":"fu26sjhq"}
+{"time":"2024-10-10T23:46:31.659617+02:00","level":"INFO","msg":"stream: started","id":"fu26sjhq"}
+{"time":"2024-10-10T23:46:31.659625+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"fu26sjhq"}}
+{"time":"2024-10-10T23:46:31.659612+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"fu26sjhq"}}
+{"time":"2024-10-10T23:46:31.659679+02:00","level":"INFO","msg":"sender: started","stream_id":{"value":"fu26sjhq"}}
+{"time":"2024-10-10T23:46:32.125521+02:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-10T23:46:32.128696+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-10T23:46:42.264241+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-10T23:46:52.239279+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-10T23:47:02.26138+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-10T23:47:12.26122+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-10T23:47:12.962887+02:00","level":"INFO","msg":"stream: closing","id":"fu26sjhq"}
+{"time":"2024-10-10T23:47:12.96349+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-10T23:47:12.963513+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-10T23:47:13.163134+02:00","level":"WARN","msg":"No program path found, not creating job artifact. See https://docs.wandb.ai/guides/launch/create-job"}
+{"time":"2024-10-10T23:47:13.163147+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2024-10-10T23:47:13.571162+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-10T23:47:14.390024+02:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"fu26sjhq"}}
+{"time":"2024-10-10T23:47:14.39002+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"fu26sjhq"}}
+{"time":"2024-10-10T23:47:14.390011+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"fu26sjhq"}}
+{"time":"2024-10-10T23:47:14.390077+02:00","level":"INFO","msg":"stream: closed","id":"fu26sjhq"}

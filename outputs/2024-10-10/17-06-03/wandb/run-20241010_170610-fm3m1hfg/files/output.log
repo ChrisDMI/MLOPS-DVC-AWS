@@ -1,0 +1,56 @@
+Setup called. Train data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 500
+}), Validation data: Dataset({
+    features: ['sentence', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'],
+    num_rows: 100
+})
+Map: 100%|███████████████████████████████████████████████████████████████████████| 500/500 [00:00<00:00, 7337.63 examples/s]
+Map: 100%|███████████████████████████████████████████████████████████████████████| 100/100 [00:00<00:00, 5980.84 examples/s]
+
+  | Name                   | Type                          | Params | Mode
+---------------------------------------------------------------------------------
+0 | bert                   | BertForSequenceClassification | 4.4 M  | eval
+1 | train_accuracy_metric  | BinaryAccuracy                | 0      | train
+2 | val_accuracy_metric    | BinaryAccuracy                | 0      | train
+3 | f1_metric              | BinaryF1Score                 | 0      | train
+4 | precision_macro_metric | BinaryPrecision               | 0      | train
+5 | recall_macro_metric    | BinaryRecall                  | 0      | train
+6 | precision_micro_metric | BinaryPrecision               | 0      | train
+7 | recall_micro_metric    | BinaryRecall                  | 0      | train
+---------------------------------------------------------------------------------
+4.4 M     Trainable params
+0         Non-trainable params
+4.4 M     Total params
+17.545    Total estimated model params size (MB)
+7         Modules in train mode
+51        Modules in eval mode
+Sanity Checking: |                                                                                    | 0/? [00:00<?, ?it/s]
+/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:424: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=7` in the `DataLoader` to improve performance.
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "train.py", line 98, in main
+    trainer.fit(model, data_module)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 538, in fit
+    call._call_and_handle_interrupt(
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/call.py", line 47, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 574, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 981, in _run
+    results = self._run_stage()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1023, in _run_stage
+    self._run_sanity_check()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1052, in _run_sanity_check
+    val_loop.run()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/utilities.py", line 178, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 110, in run
+    self.setup_data()
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 194, in setup_data
+    num_batches = _parse_num_batches(stage, length, limit_batches)
+  File "/Users/christiansegnou/miniconda3/envs/torch-mps/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/data_connector.py", line 459, in _parse_num_batches
+    raise MisconfigurationException(
+lightning_fabric.utilities.exceptions.MisconfigurationException: You requested to check 0.25 of the `val_dataloader` but 0.25 * 2 < 1. Please increase the `limit_val_batches` argument. Try at least `limit_val_batches=0.5`
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

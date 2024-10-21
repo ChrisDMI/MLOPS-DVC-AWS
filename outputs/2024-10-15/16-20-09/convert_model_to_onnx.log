@@ -1,0 +1,2 @@
+[2024-10-15 16:20:09,259][__main__][INFO] - Loading pre-trained model from: /Users/christiansegnou/Documents/MLOPS/MLOPS-BASICS/ONNX/models/best-checkpoint.ckpt
+[2024-10-15 16:20:20,009][__main__][INFO] - Converting the model into ONNX format

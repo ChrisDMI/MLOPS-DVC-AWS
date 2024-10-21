@@ -1,0 +1,18 @@
+{"time":"2024-10-08T20:39:05.005729+02:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-08T20:39:05.005799+02:00","level":"INFO","msg":"created symlink","path":"wandb/run-20241008_203904-uffxil92/logs/debug-core.log"}
+{"time":"2024-10-08T20:39:05.010975+02:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-08T20:39:05.025688+02:00","level":"INFO","msg":"created new stream","id":"uffxil92"}
+{"time":"2024-10-08T20:39:05.025794+02:00","level":"INFO","msg":"stream: started","id":"uffxil92"}
+{"time":"2024-10-08T20:39:05.025846+02:00","level":"INFO","msg":"sender: started","stream_id":{"value":"uffxil92"}}
+{"time":"2024-10-08T20:39:05.02583+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"uffxil92"}}
+{"time":"2024-10-08T20:39:05.025775+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"uffxil92"}}
+{"time":"2024-10-08T20:39:05.501776+02:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-08T20:39:05.503903+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-08T20:39:14.934324+02:00","level":"INFO","msg":"stream: closing","id":"uffxil92"}
+{"time":"2024-10-08T20:39:14.934847+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-08T20:39:14.935005+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-08T20:39:16.986099+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-08T20:39:17.207267+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"uffxil92"}}
+{"time":"2024-10-08T20:39:17.207312+02:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"uffxil92"}}
+{"time":"2024-10-08T20:39:17.207293+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"uffxil92"}}
+{"time":"2024-10-08T20:39:17.209372+02:00","level":"INFO","msg":"stream: closed","id":"uffxil92"}

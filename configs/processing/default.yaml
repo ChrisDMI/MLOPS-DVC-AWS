@@ -1,0 +1,3 @@
+# configs/processing/default.yaml
+batch_size: 64   # Batch size for training
+max_length: 128  # Max token length for sequences

@@ -1,0 +1,21 @@
+{"time":"2024-10-11T00:00:32.920207+02:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-11T00:00:32.920289+02:00","level":"INFO","msg":"created symlink","path":"wandb/run-20241011_000032-k5mypty1/logs/debug-core.log"}
+{"time":"2024-10-11T00:00:32.922662+02:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-11T00:00:32.933703+02:00","level":"INFO","msg":"created new stream","id":"k5mypty1"}
+{"time":"2024-10-11T00:00:32.933769+02:00","level":"INFO","msg":"stream: started","id":"k5mypty1"}
+{"time":"2024-10-11T00:00:32.933789+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"k5mypty1"}}
+{"time":"2024-10-11T00:00:32.933951+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"k5mypty1"}}
+{"time":"2024-10-11T00:00:32.933857+02:00","level":"INFO","msg":"sender: started","stream_id":{"value":"k5mypty1"}}
+{"time":"2024-10-11T00:00:33.441046+02:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-11T00:00:33.442072+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-11T00:00:43.555132+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-11T00:00:53.570289+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-11T00:01:03.559371+02:00","level":"ERROR","msg":"monitor: gpu: error sampling metrics: signal: trace/BPT trap"}
+{"time":"2024-10-11T00:01:04.79128+02:00","level":"INFO","msg":"stream: closing","id":"k5mypty1"}
+{"time":"2024-10-11T00:01:04.791896+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-11T00:01:04.791938+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-11T00:01:07.45858+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-11T00:01:08.11005+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"k5mypty1"}}
+{"time":"2024-10-11T00:01:08.110101+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"k5mypty1"}}
+{"time":"2024-10-11T00:01:08.110136+02:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"k5mypty1"}}
+{"time":"2024-10-11T00:01:08.111034+02:00","level":"INFO","msg":"stream: closed","id":"k5mypty1"}

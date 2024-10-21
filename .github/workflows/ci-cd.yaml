@@ -1,0 +1,73 @@
+name: CI/CD Pipeline
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 3: Install application dependencies
+      - name: Install Dependencies
+        run: |
+          pip install --no-cache-dir -r requirements_inference.txt
+          pip install --no-cache-dir "dvc[s3]"
+
+      # Step 4: Configure AWS credentials for DVC
+      - name: Configure AWS Credentials for DVC
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        run: |
+          dvc remote modify storage --local \
+            access_key_id $AWS_ACCESS_KEY_ID
+          dvc remote modify storage --local \
+            secret_access_key $AWS_SECRET_ACCESS_KEY
+          dvc remote modify storage --local \
+            region $AWS_DEFAULT_REGION
+
+      # Step 5: Pull DVC data (Optional)
+      - name: Pull DVC Data
+        run: |
+          dvc pull dvcfiles/trained_model.dvc
+
+      # Step 6: Build the Docker image
+      - name: Build Docker Image
+        run: |
+          docker build -t inference:latest .
+
+      # Step 7: Run the Docker container
+      - name: Run Docker Container
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        run: |
+          docker run -d -p 8000:8000 \
+            -e AWS_ACCESS_KEY_ID \
+            -e AWS_SECRET_ACCESS_KEY \
+            -e AWS_DEFAULT_REGION \
+            --name inference_container inference:latest
+
+      # Step 8: Test the API endpoint
+      - name: Test API Endpoint
+        run: |
+          sleep 5  # Wait for the server to start
+          curl -f http://localhost:8000/health
+
+      # Step 9: Clean up resources
+      - name: Clean Up
+        run: |
+          docker stop inference_container
+          docker rm inference_container

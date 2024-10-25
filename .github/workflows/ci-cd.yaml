@@ -17,7 +17,10 @@ jobs:
         with:
           python-version: '3.9'
 
-      # Step 3: Install application dependencies
+      # Step 3: Downgrade pip to a version below 24.1 & Install application dependencies
+      - name: Downgrade pip
+        run: |
+          python -m pip install --upgrade "pip<24.1"
       - name: Install Dependencies
         run: |
           pip install --no-cache-dir -r requirements_inference.txt
@@ -37,7 +40,15 @@ jobs:
           dvc remote modify storage --local \
             region $AWS_DEFAULT_REGION
 
-      # Step 5: Pull DVC data (Optional)
+      # Step 5: Configure DVC remote to point to the S3 bucket
+      - name: Configure DVC Remote
+        run: |
+          dvc remote add -d storage s3://cola-classification/dvc-files
+          dvc remote modify storage --local access_key_id $AWS_ACCESS_KEY_ID
+          dvc remote modify storage --local secret_access_key $AWS_SECRET_ACCESS_KEY
+          dvc remote modify storage --local region $AWS_DEFAULT_REGION
+
+      # Step 5 bis: Pull DVC data (Optional)
       - name: Pull DVC Data
         run: |
           dvc pull dvcfiles/trained_model.dvc

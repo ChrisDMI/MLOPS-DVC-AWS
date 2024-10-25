@@ -7,17 +7,21 @@ WORKDIR /app
 # Copy project files to the working directory
 COPY . /app
 
+
+# Install fsspec before installing other dependencies
+RUN pip install --no-cache-dir fsspec==2023.6.0
+
 # Install application dependencies
 RUN pip install --no-cache-dir -r requirements_inference.txt
 
 # Install DVC with S3 support
-RUN pip install --no-cache-dir "dvc[s3]"
+#RUN pip install --no-cache-dir "dvc[s3]"
 
 # Initialize DVC without Git (no SCM)
-RUN dvc init -f --no-scm
+#RUN dvc init -f --no-scm
 
 # Configure DVC to use the S3 remote storage
-RUN dvc remote add -d storage s3://cola-classification/dvc-files
+RUN dvc remote add -d storage s3://cola-classification/dvc-files || true
 
 # Expose the port your application runs on
 EXPOSE 8000

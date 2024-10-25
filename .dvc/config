@@ -1,4 +1,6 @@
 [core]
-    remote = storage
+    remote = myremote
 ['remote "storage"']
+    url = s3://cola-classification/dvc-files
+['remote "myremote"']
     url = s3://cola-classification/dvc-files
